@@ -43,6 +43,23 @@ Verificar o gem instalado na máquina (appium_lib e o cucumber)
 Listar devices local
 > adb devices
 
+Trabalando com elementos
+```
+irb
+3.0.0 :001 > ["Diego", "Theo"]
+ => ["Diego", "Theo"] 
+3.0.0 :002 > ar = ["Diego", "Theo"]
+ => ["Diego", "Theo"] 
+3.0.0 :003 > ar
+ => ["Diego", "Theo"] 
+3.0.0 :004 > ar[1]
+ => "Theo" 
+3.0.0 :005 > ar = ["Diego", "Theo", "Daniela"]
+ => ["Diego", "Theo", "Daniela"] 
+3.0.0 :006 > ar[2]
+ => "Daniela" 
+3.0.0 :007 > 
+```
 
 ### Passos
 - Apos realizar o Start no Appium Server e olhar a lista de devices disponíveis
