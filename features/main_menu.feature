@@ -1,3 +1,4 @@
+@main_menu
 Feature: As a user I ant to convert units
 
   Scenario: When I tap on menu icon, I should see left side menu
@@ -5,6 +6,7 @@ Feature: As a user I ant to convert units
     When I press on menu icon
     Then I should see left side menu
 
+  @conversions
   Scenario: i should be able to open My convertion screen
     Given I land on home screen
     When I press on menu icon

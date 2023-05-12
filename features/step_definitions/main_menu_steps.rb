@@ -1,20 +1,23 @@
 Given('I land on home screen') do
-  puts('Lended on home screen')
+  find_element(id: "action_search")
+  find_element(id: "action_add_favorites")
 end
 
 When('I press on menu icon') do
-  puts('Menu icon pressed')
+  find_element(accessibility_id: "Open navigation drawer").click
 end
 
 Then('I should see left side menu') do
-  puts('I see left side menu')
+  ##text("Unit Converter")
+  puts('Comando "text=Unit Converter"')
 end
 
 When('I press on My conversions button') do
-  puts('My conversions button pressed')
+  ##text("My conversions").click
+  find_element(id: "target_value_placeholder").click
 end
 
 Then('I land on My conversions screen') do
-  puts('Landed on My conversions screen')
+  find_element(id: "text_info_no_custom_conversions").text.equal?("No personal conversion created yet")
 end
 
