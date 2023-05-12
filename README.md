@@ -26,14 +26,6 @@ Projeto utilizando Ruby com cucumber e appium para mobile
   "appium:app": "/home/tqi_dmachado/workspace/ruby-cucumber-appium-test/features/support/PreciseUnitConversion.apk"
   }
   ```
-### Lisnks de apoio para ambiente linux
-https://gorails.com/setup/ubuntu/20.04
-https://installati.one/install-cucumber-ubuntu-20-04/
-https://phoenixnap.com/kb/install-ruby-ubuntu
-https://www.thelinuxfaq.com/ubuntu/ubuntu-16-04-lts-xenial-xerus/cucumber?type=uninstall
-https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/ruby-full?type=uninstall
-https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html
-
 
 ### Comandos
 Comando para validar os steps
@@ -57,3 +49,14 @@ Listar devices local
 > adb devices
 - Rodar um teste para poder abrir o app no device usando o env.rb criado. Com isso o teste e executado logando as info no appium server executanto o Before e o After do teste
 > cucumber -t @wip
+
+
+
+
+### Links de apoio para ambiente linux
+https://gorails.com/setup/ubuntu/20.04
+https://installati.one/install-cucumber-ubuntu-20-04/
+https://phoenixnap.com/kb/install-ruby-ubuntu
+https://www.thelinuxfaq.com/ubuntu/ubuntu-16-04-lts-xenial-xerus/cucumber?type=uninstall
+https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/ruby-full?type=uninstall
+https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html
