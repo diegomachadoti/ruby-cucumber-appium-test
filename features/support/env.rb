@@ -1,5 +1,4 @@
 require "appium_lib"
-
 def caps
   { caps: {
     deviceName: "Anyname",
