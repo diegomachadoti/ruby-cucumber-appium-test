@@ -17,10 +17,12 @@ Then('Right unit picker value should be {string}') do |value|
 end
 
 Then('Show All button should be {string}')  do |state|
+
+  button_state = find_element(id: "btn_show_all").enabled?
   if state == "enabled"
-    puts('button is enabled')
+    fail("Expected to be enabled") if button_state != true
   elsif state == "disabled"
-    puts ('button is disabled')
+    fail("Expected to be disabled") if button_state != false
   end
 end
 
@@ -30,7 +32,7 @@ When('I press on Clear button') do
 end
 
 
-When('I type {string} to target text field') do |target|
+When('I type {string} on application keyboard') do |target|
   digits = target.split("")
 
   digits.each do |num|
@@ -59,7 +61,11 @@ Then('I press on Favorite conversions') do
 end
 
 Then('I verify {string} added to Favorite conversions list') do |unit_type|
-  find_element(id: "favorites_item_hint").text.equal?(unit_type)
+  #item_text = find_element(id: "favorites_item_hint").text.equal?(unit_type)
+  item_text = find_element(id: "favorites_item_hint").text
+  if unit_type != item_text
+    fail("Cannot find #{unit_type} in Favorite list")
+  end
 end
 
 Then('I press on search icon') do
@@ -76,8 +82,23 @@ Then('I press return button on soft keyboard') do
 end
 
 Then('I see {string} as a current unit converter') do |current_unit|
-  #find_element(id:"").find_element(xpath: "//*[contains(@text, #{current_unit})]")
+  #find_element(id:"").find_element(xpath: "//*[contains(@text, #{current_unit})]") #contains não funcionou
   find_element(id: "action_bar").find_element(xpath: "//android.widget.TextView[@text='#{current_unit}']")
 end
+
+Then('I select {string} from left unit picker') do |value|
+  find_elements(id: "select_unit_spinner")[0].click
+  find_in_list(value)
+end
+
+Then('I select {string} from menu') do |value|
+  find_element(xpath: "//android.widget.TextView[@text='#{value}']").click
+end
+
+Then('I select {string} from right unit picker') do |value|
+  find_elements(id: "select_unit_spinner")[1].click
+  find_in_list(value)
+end
+
 
 

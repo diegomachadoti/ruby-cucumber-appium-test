@@ -21,3 +21,6 @@ Then('I land on My conversions screen') do
   find_element(id: "text_info_no_custom_conversions").text.equal?("No personal conversion created yet")
 end
 
+When(/^I press on switch units button$/) do
+  find_element(id: "img_switch").click
+end

@@ -7,6 +7,11 @@ Before do
 end
 
 After do  |scenario|
+
+  if !File.directory?("screnshots")
+    FileUtils.mkdir_p("screnshots")
+  end
+
   # Depois de cada cenário de teste
   if scenario.passed?
     # Caso o cenário tenha falhado, tire um screenshot do aplicativo e salve-o
@@ -45,8 +50,49 @@ Around('@time_sensitive') do |scenario, block|
 end
 
 
+# Realiza o delete dos printsScreen
 def delete_screenshots
   # Deleta os arquivos de screenshot existentes
   screenshots_dir = File.join(Dir.pwd, 'screenshots')
   FileUtils.rm_rf(Dir.glob("#{screenshots_dir}/*.png"))
+end
+
+#Executa a ação de scroll
+def find_in_list(value)
+  start_x = 0.5
+  start_y = 0.2 # tamanho inicial
+  end_x = 0.5
+  end_y = 0.6 # tamanho máximo
+
+  #3.times executar o codigo 2 vezes
+  3.times do  Appium::TouchAction.new.swipe(
+    start_x: start_x,
+    start_y: start_y,
+    end_x: end_x,
+    end_y: end_y,
+    duration:600).perform
+  end
+
+  # obter todo o objeto da pagina para verificação
+  current_screen = get_source
+  previous_screen = ""
+
+  #Após aplicar o scroll se o objeto existir voltar o scroll
+  until (exists{ find_element(xpath: "//android.widget.TextView[@text='#{value}']") }) ||(current_screen == previous_screen) do
+    Appium::TouchAction.new.swipe(
+      start_x: end_x,
+      start_y: end_y,
+      end_x: start_x,
+      end_y: start_y,
+      duration:600).perform
+    previous_screen = current_screen
+    current_screen = get_source
+  end
+
+  if exists{ find_element(xpath: "//android.widget.TextView[@text='#{value}']") }
+    find_element(xpath: "//android.widget.TextView[@text='#{value}']").click
+  else
+    fail("Elemento com o texto ""#{value}"" não encontrado na tela.")
+  end
+
 end

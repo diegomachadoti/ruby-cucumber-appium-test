@@ -1,0 +1,6 @@
+custom: --tags @custom_conversions --format html --out report.html --format pretty
+home: --tags @home_screen --format html --out report.html --format pretty
+main: --tags @main_menu --format html --out report.html --format pretty
+
+any: --tags @home_screen, @custom_conversions #executa uma tag ou outra
+strict: --tags @home_screen --tags @custom_conversions #executa as duas tags

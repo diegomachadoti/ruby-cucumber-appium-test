@@ -54,7 +54,7 @@ projeto_login_mobile
 │       ├── app.rb
 │       └── env.rb 
 │       └── app.apk 
-└── build.gradle
+└── cucumber.yml
 ````
 - O diretório **features** contém os arquivos de feature em linguagem Gherkin para descrever os cenários de teste.
 - O diretório **step_definitions** contém os arquivos de implementação dos passos dos cenários de teste.
@@ -62,6 +62,7 @@ projeto_login_mobile
 - O arquivo **env.rb** configura o ambiente de teste, incluindo as configurações do Appium.
 - O arquivo **env.rb** configura o ambiente de teste, incluindo as configurações do Appium.
 - O arquivo **hooks.rb** configurao que serão executados antes e depois de cada cenário de teste, permitindo que você adicione código de inicialização e finalização personalizado, bem como capturas de tela automatizadas em caso de falha nos testes.
+- O arquivo **cucumber.yml** configurao de tags de testes para utiliza-las como parêmetro na execução.
 
 ### Executando os testes
 1- Certifique-se de que o dispositivo móvel ou emulador esteja conectado e configurado corretamente.
@@ -77,11 +78,18 @@ Comando para verificar quais steps estão faltando
 Validar teste com parâmetros
 > cucumber -t @default @wip
 
+Comando quando possui tags customaizadas no arquivo **cucumber.yml**:
+> cucumber -p custom --dry-run
+
 Verificar o gem instalado na máquina (appium_lib e o cucumber)
 > gem list
 
 Listar devices local
 > adb devices
+
+Obter/imprimir o objeto inteiro da tela do app
+> puts (get_source)
+
 
 ### Trabalando com elementos de Array no terminal
 ```
@@ -101,9 +109,15 @@ irb
 3.0.0 :007 > 
 ```
 
+### Report
+Para gerar report nos testes passar os seguintes parâmetros no teste
+> --format html --out report.html --format pretty
 
+![img.png](img.png)
+*report sera gerado na pasta raiz do projeto.*
 
 ### Links de apoio para ambiente linux
+* [Cucumber Ruby](https://github.com/cucumber/cucumber-ruby)
 * [Setup ambiente Ubuntu 20.04 ](https://gorails.com/setup/ubuntu/20.04)
 * [Instação cucumber Ubuntu 20.04](https://installati.one/install-cucumber-ubuntu-20-04/)
   * [Outros comando instação cucumber linux](https://www.thelinuxfaq.com/ubuntu/ubuntu-16-04-lts-xenial-xerus/cucumber?type=uninstall)
