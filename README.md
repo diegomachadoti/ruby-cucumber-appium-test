@@ -90,6 +90,32 @@ Listar devices local
 Obter/imprimir o objeto inteiro da tela do app
 > puts (get_source)
 
+Utilizar biblioteca **pry** para fins de depuração no Cucumber,
+> require "pry"
+
+> sudo apt-get install pry
+
+> bundle install
+
+> binding.pry # Adicione esse ponto de interrupção
+
+Comando Jenkins Local
+```
+1- http://localhost:8080/`
+2- sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+3- Colar chave avançar
+4- Selecionar opção Instalar plugins sugeridos
+5- Realizar login local (criar user e pass)
+6- Usar instancia padrão sugerida
+7- Comandos:
+  sudo service jenkins start
+  sudo service jenkins stop
+  sudo service jenkins restart
+  sudo service jenkins status
+  sudo find / -name jenkins.war # Localizar dir da instalação
+  sudo cat /var/lib/jenkins/secrets/initialAdminPassword # reiniciar senha Admin
+```
+
 
 ### Trabalando com elementos de Array no terminal
 ```
@@ -116,15 +142,22 @@ Para gerar report nos testes passar os seguintes parâmetros no teste
 ![img.png](img.png)
 *report sera gerado na pasta raiz do projeto.*
 
-### Links de apoio para ambiente linux
-* [Cucumber Ruby](https://github.com/cucumber/cucumber-ruby)
-* [Setup ambiente Ubuntu 20.04 ](https://gorails.com/setup/ubuntu/20.04)
-* [Instação cucumber Ubuntu 20.04](https://installati.one/install-cucumber-ubuntu-20-04/)
-  * [Outros comando instação cucumber linux](https://www.thelinuxfaq.com/ubuntu/ubuntu-16-04-lts-xenial-xerus/cucumber?type=uninstall)
-* [Instação ruby Ubuntu](https://phoenixnap.com/kb/install-ruby-ubuntu)
-  * [Outros comandos instação ruby linix](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/ruby-full?type=uninstall)
-* [Soluções de problema de gem](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html)
+### Links de apoio
 
+* **Instalações Linux:**
+  * [Cucumber Ruby](https://github.com/cucumber/cucumber-ruby)
+  * [Setup ambiente Ubuntu 20.04 ](https://gorails.com/setup/ubuntu/20.04)
+  * [Instação cucumber Ubuntu 20.04](https://installati.one/install-cucumber-ubuntu-20-04/)
+    * [Outros comando instação cucumber linux](https://www.thelinuxfaq.com/ubuntu/ubuntu-16-04-lts-xenial-xerus/cucumber?type=uninstall)
+  * [Instação ruby Ubuntu](https://phoenixnap.com/kb/install-ruby-ubuntu)
+    * [Outros comandos instação ruby linix](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/ruby-full?type=uninstall)
+  * [Soluções de problema de gem](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html)
+* **Dependencias:**
+  * [Dep: pry](https://rubygems.org/gems/pry/versions/0.14.1)
+  * [Dep: eventmachine](https://rubygems.org/gems/eventmachine/versions/1.2.7)
+* **Jenkins:**
+  * [Jenkins](https://www.jenkins.io/download/)
+  * [Install Linux](https://pkg.jenkins.io/debian/)
 
 
 

@@ -100,5 +100,25 @@ Then('I select {string} from right unit picker') do |value|
   find_in_list(value)
 end
 
+Then(/^I should see text "([^"]*)"$/) do |value|
+  #text(value)
+  find_element(id: "text_info_history").find_element(xpath: "//android.widget.TextView[@text='#{value}']")
+end
+
+Then(/^I verify that (\d+)(?:st|nd|rd|th)? result in history list is "([^"]*)"$/) do |index, text|
+  parent_element = find_element(id: "history_conversion_list")
+  array_of_elements = parent_element.find_elements(id: "history_single_line")
+  actual_text = array_of_elements[index.to_i - 1].find_element(id: "history_item_hint").text
+  if actual_text != text
+    fail("Expected text is #{text}, actual text is #{actual_text}")
+  end
+end
+
+When(/^I press delete from history at (\d+)st row$/) do |index|
+  parent_element = find_element(id: "history_conversion_list")
+  array_of_elements = parent_element.find_elements(id: "history_single_line")
+  array_of_elements[index.to_i - 1].find_element(id: "deleteIcon").click
+end
+
 
 

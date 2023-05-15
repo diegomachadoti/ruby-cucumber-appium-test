@@ -1,4 +1,6 @@
 require "appium_lib"
+require "eventmachine"
+require "pry"
 def caps
   { caps: {
     deviceName: "Anyname",

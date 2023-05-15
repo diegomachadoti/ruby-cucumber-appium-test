@@ -8,8 +8,11 @@ When('I press on menu icon') do
 end
 
 Then('I should see left side menu') do
-  ##text("Unit Converter")
-  puts('Comando "text=Unit Converter"')
+  #item_text = find_element(path: "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView").find_element(xpath: "//android.widget.TextView[@text='Unit Converter']")
+  item_text = find_element(xpath: "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView").text
+  if item_text != "Unit Converter"
+    fail("Cannot find #{item_text} texto menu.")
+  end
 end
 
 When('I press on My conversions button') do
