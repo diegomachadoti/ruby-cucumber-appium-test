@@ -1,5 +1,5 @@
 # ruby-cucumber-appium-test
-Projeto utilizando Ruby com cucumber() e appium para dispositivos mobile.
+Projeto utilizando Ruby com cucumber(Gherkin) e appium para dispositivos mobile.
 
 ### Pré-requisitos
 Certifique-se de ter o Ruby, o bundler instalados em seu sistema. Além disso, configure o ambiente de desenvolvimento para executar testes em um dispositivo móvel ou emulador.
