@@ -52,8 +52,9 @@ projeto_login_mobile
 - O arquivo **cucumber.yml** configurao de tags de testes para utiliza-las como parêmetro na execução.
 
 ### Executando os testes
-1- Certifique-se de que o dispositivo móvel ou emulador esteja conectado e configurado corretamente.
-2- No terminal, na raiz do projeto, execute o seguinte comando para iniciar a execução dos testes:
+###### 1- Certifique-se de que o dispositivo móvel ou emulador esteja conectado e configurado corretamente.
+
+###### 2- No terminal, na raiz do projeto, execute o seguinte comando para iniciar a execução dos testes:
 
 Comando para validar/gerar os steps
 > cucumber 
