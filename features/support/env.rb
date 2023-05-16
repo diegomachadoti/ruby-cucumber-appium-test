@@ -12,6 +12,19 @@ def caps
   } }
 end
 
+=begin
+def caps
+  { caps: {
+    deviceName: "iPhone 8 Plus",
+    platformName: "iOS",
+    platformVersion: "12.1",
+    app: (File.join(File.dirname(__FILE__), "AppiOS.app")),
+    bundleId: "iOS.BonusApp",
+    newCommandTimeout: "3600"
+  }}
+end
+=end
+
 Appium::Driver.new(caps,true)
 Appium.promote_appium_methods Object
 

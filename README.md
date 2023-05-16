@@ -75,6 +75,7 @@ Verificar o gem instalado na máquina (appium_lib e o cucumber)
 Listar devices local
 > adb devices
 
+
 Obter/imprimir o objeto inteiro da tela do app
 > puts (get_source)
 
@@ -87,8 +88,23 @@ Utilizar biblioteca **pry** para fins de depuração no Cucumber,
 
 > binding.pry # Adicione esse ponto de interrupção
 
+Comandos extras para iniciar automação com seu proprio aplicativo
+> adb devices
+
+> adb shell pm list packages # listar todos os pacotes disponíveis
+
+> adb shell pm path com.android.chrome # lista o caminho de uma packager especifica
+
+> adb pull /data/app/Chrome.apk # gera a apk no diretorio que vc estiver
+
+Apos abrir o apk no emulador
+> adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
+
+*Com esse comenod vc consegue obter appPackage e appActivity*
+
 Comando Jenkins Local
 ```
+Após instalação:
 1- http://localhost:8080/`
 2- sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 3- Colar chave avançar
@@ -102,6 +118,10 @@ Comando Jenkins Local
   sudo service jenkins status
   sudo find / -name jenkins.war # Localizar dir da instalação
   sudo cat /var/lib/jenkins/secrets/initialAdminPassword # reiniciar senha Admin
+  Adicinar na pipe Shell Script
+    cd /home/tqi_dmachado/workspace/ruby-cucumber-appium-test
+    cucumber -p main
+  Rodar pipeline
 ```
 
 
@@ -132,6 +152,7 @@ Para gerar report nos testes passar os seguintes parâmetros no teste
 
 ### Links de apoio
 
+* [Appium Docs](https://appium.io/docs/en/2.0/)
 * **Instalações Linux:**
   * [Cucumber Ruby](https://github.com/cucumber/cucumber-ruby)
   * [Setup ambiente Ubuntu 20.04 ](https://gorails.com/setup/ubuntu/20.04)
