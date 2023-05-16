@@ -6,6 +6,7 @@ Certifique-se de ter o Ruby, o bundler instalados em seu sistema. Além disso, c
 - Ruby (2.4.0 ou superior)
 - Bundler (1.15.0 ou superior)
 - Android Studio
+  - Aqui utilizaremos o Android Studio para criar o device 
 - Java Development Kit (JDK) 8 ou superior
 - Appium Desktop (Elements inspector)
   - Start Server **0.0.0.0:4723**
@@ -137,7 +138,7 @@ Para gerar report nos testes passar os seguintes parâmetros no teste
   * [Instação cucumber Ubuntu 20.04](https://installati.one/install-cucumber-ubuntu-20-04/)
     * [Outros comando instação cucumber linux](https://www.thelinuxfaq.com/ubuntu/ubuntu-16-04-lts-xenial-xerus/cucumber?type=uninstall)
   * [Instação ruby Ubuntu](https://phoenixnap.com/kb/install-ruby-ubuntu)
-    * [Outros comandos instação ruby linix](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/ruby-full?type=uninstall)
+    * [Outros comandos instação ruby linux](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/ruby-full?type=uninstall)
   * [Soluções de problema de gem](https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html)
 * **Dependencias:**
   * [Dep: pry](https://rubygems.org/gems/pry/versions/0.14.1)
